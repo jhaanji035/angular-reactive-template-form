@@ -1,0 +1,71 @@
+<h2 class="register-heading border border-3 p-2" aria-label="Register Yourself">
+    <img src="../assets/hgs.png" width="150" />
+    {{heading}}
+    <span style="float: right;font-size: small;font-weight: bold;">{{currentDate | date:'medium'}}</span>
+</h2>
+<div class="row">
+    <div class="col-2">
+        <form #reportForm="ngForm" (ngSubmit)="onSubmit(reportForm)">
+            <div class="form-group">
+                <label for="date" class="form-label">
+                    Date:
+                    <input type="date" class="form-control" name="date" ngModel required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    Room No:
+                    <!-- <input type="text" class="form-control" name="room_no" ngModel required> -->
+                    <select class="form-control" name="room_no" ngModel>
+                        <option value="">Please Select Room </option>
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                        <option>104</option>
+                        <option>105</option>
+                        <option>106</option>
+                        <option>107</option>
+                        <option>108</option>
+                        <option>109</option>
+                        <option>110</option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    Price:
+                    <input type="text" class="form-control" name="room_price" ngModel required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    Room Food Amount:
+                    <input type="text" class="form-control" name="food_amount" ngModel required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    Mis Amount:
+                    <input type="text" class="form-control" name="misc_amount" ngModel required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">
+                    Comment:
+                    <input type="textarea" row="3" class="form-control" name="comment" ngModel required>
+                </label>
+            </div>
+            <!-- ... other form controls ... -->
+            <button type="submit" [disabled]="!reportForm.valid" class="btn"
+                [ngClass]="!reportForm.valid ? 'btn-secondary' : 'btn-primary'">Save Report</button>
+        </form>
+    </div>
+    <div class="col-10">
+        <!-- AG Grid Angular Component -->
+
+        <ag-grid-angular style="width: 100%; height: 100%" class="ag-theme-alpine" [columnDefs]="columnDefs"
+            [defaultColDef]="defaultColDef" [rowData]="rowData && rowData.length > 0 ? rowData : []"
+            [animateRows]="true" (gridReady)="onGridReady($event)">
+        </ag-grid-angular>
+    </div>
+</div>

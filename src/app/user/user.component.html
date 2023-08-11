@@ -1,0 +1,35 @@
+
+    <div class="d-flex justify-content-center">
+
+    <form [formGroup]="myForm" (ngSubmit)=handleSubmit()>
+        class="form-control"
+        <p class="border p-2 bg-danger" *ngIf="false && !formValid" [ngStyle]="ErrorStyle">Please check form and fix issues.</p>
+        <div class="form-group">
+            <label for="username" class="form-label">
+                Username:
+                <input class="form-control" type ="text" id="username" formControlName="username"/>
+            </label>
+            <span class="mx-2 p-1 text-capitalize" *ngIf="!myForm.get('username')?.valid">Username should be min 4 and max 20 charset</span>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">
+                Email:
+                <input class="form-control" type="text" id="email" formControlName="email" />
+            </label>
+            <span class="mx-2 p-1 text-capitalize" *ngIf="!myForm.get('email')?.valid">please check valid email</span>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">
+                Password:
+                <input class="form-control" type="password" id="password" formControlName="password" />
+            </label>
+            <span class="mx-2 p-1 text-capitalize" *ngIf="!myForm.get('password')?.valid">Password should be min 4 and max 20 charset</span>
+        </div>
+        <div class="form-group">        
+            <button class="btn" [ngClass]="!formValid ? 'btn-secondary' : 'btn-primary'" [disabled]="!formValid"> Register </button>
+        </div>
+        
+    </form>
+
+
+</div>

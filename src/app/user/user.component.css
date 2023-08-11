@@ -1,0 +1,17 @@
+.register-headin{
+    font-size: 30px;
+}
+.register-heading:hover{
+    font-size: 40px;
+    transition: font-size 0.5s ease;
+    color: rosybrown;
+}
+
+label.form-label::before {
+    content: '*' !important;
+    color: #ff0000 !important;
+}
+
+span.mx-2.p-1.text-capitalize{
+    color: #ff0000;
+}

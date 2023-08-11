@@ -1,0 +1,11 @@
+<div class="row">
+
+  {{childData}}
+<select class="form-control" (change)="selectedCurrency($event)">
+    <option value="" disabled selected="selected">By Currency</option>
+    <option *ngFor="let item of result" value="{{item}}">{{item}}</option>
+  </select>
+  <input type="number" [(ngModel)]="currencyUSD" placeholder="Input Value to convert from USD">
+  <input type="number" [(ngModel)]="convertedCurrency" placeholder="Converted value" [ngModel]="convertedCurrency" disabled>
+  <button (click)="handleClick()">hey Parent</button>
+</div>  

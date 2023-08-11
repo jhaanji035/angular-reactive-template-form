@@ -1,0 +1,11 @@
+.register-heading{
+    color: rgb(194, 111, 2);
+}
+label.form-label::before {
+    content: '*' !important;
+    color: #ff0000 !important;
+}
+
+span.mx-2.p-1.text-capitalize{
+    color: #ff0000;
+}

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'calculator';
+  parent = "Hello Child"
+  
+  receiveMessage(message: string) {
+    console.log("Message received");
+  }
+  
 }
