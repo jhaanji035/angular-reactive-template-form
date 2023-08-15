@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctor's Appointment",
+      "day": "Sunday",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Shopping center",
+      "day": "Monday",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Angular Interview with MAc",
+      "day": "Tuesday",
+      "reminder": true
+    },
+    {
+      "text": "Dustbin Needs to be kept outside",
+      "day": "Every Tuesday",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "PPSN Appointment ",
+      "day": "Wednesday 8 AM",
+      "reminder": true,
+      "id": 5
+    }
+  ]
+}

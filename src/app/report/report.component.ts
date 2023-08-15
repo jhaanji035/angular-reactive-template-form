@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
+import { DataService } from '../services/DataService';
 
 interface IReport {
   date: Date
@@ -19,7 +20,7 @@ interface IReport {
 })
 export class ReportComponent implements OnInit{
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
   // Each Column Definition results in one Column.
   columnDefs: ColDef[] = [
@@ -50,12 +51,15 @@ export class ReportComponent implements OnInit{
 
   onSubmit(reportForm: NgForm) {
     if (reportForm.valid) {
-      const store = localStorage.getItem('report') || ""
-      const jsonData = JSON.parse(store)
-      const data = [...jsonData, reportForm.value]
-      this.rowData = data
-      localStorage.setItem('report', JSON.stringify(data))
-      reportForm.reset()
+      //const store = localStorage.getItem('report') || ""
+      //const jsonData = JSON.parse(store)
+      const data = reportForm.value
+      //this.rowData = data
+      //localStorage.setItem('report', JSON.stringify(data))
+      // reportForm.reset() 
+      const response = this.dataService.setReport(data)
+      console.log(response);
+      
     }
   }
 }

@@ -1,0 +1,11 @@
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 2px;
+    border-color: black;
+    color: #ffffff;
+}
