@@ -20,7 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/task', pathMatch: 'full' }, // Redirect to 'home' on app load
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirect to 'home' on app load
   { path: 'home', component: ReportComponent },
   { path: 'expense', component: UserComponent },
   { path: 'task', component: TaskTrackerComponent }
